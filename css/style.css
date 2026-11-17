@@ -1,0 +1,1359 @@
+
+/* =========================================
+   1. RESET AND GLOBAL STYLES
+========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.section {
+    position: relative;
+    padding: var(--space-section) var(--page-gutter);
+}
+
+.eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    line-height: 1.6;
+    text-transform: uppercase;
+}
+
+.section-heading {
+    position: relative;
+    z-index: 2;
+    max-width: var(--page-width);
+    margin: 0 auto 75px;
+}
+
+.section-heading h2 {
+    margin-top: 22px;
+    font-family: var(--font-display);
+    font-size: clamp(42px, 6.5vw, 88px);
+    font-weight: 400;
+    line-height: 1.04;
+    letter-spacing: -0.055em;
+}
+
+.section-heading h2 em,
+.footer h2 em {
+    color: var(--accent);
+    font-weight: 400;
+}
+
+.section-intro {
+    max-width: 430px;
+    margin-top: 24px;
+    color: var(--ink-soft);
+    font-size: 14px;
+}
+
+
+/* =========================================
+   2. NAVIGATION
+========================================= */
+
+.site-header {
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 25px var(--page-gutter);
+    color: var(--ink);
+}
+
+.brand-mark {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.08em;
+}
+
+.brand-mark span {
+    color: var(--accent);
+}
+
+.main-nav {
+    display: flex;
+    gap: clamp(18px, 3vw, 42px);
+}
+
+.main-nav a,
+.nav-note {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    transition: color 250ms ease;
+}
+
+.main-nav a:hover,
+.nav-note:hover {
+    color: var(--accent);
+}
+
+.nav-note span {
+    color: var(--accent);
+}
+
+
+/* =========================================
+   3. HERO
+========================================= */
+
+.hero {
+    position: relative;
+    isolation: isolate;
+
+    display: flex;
+    min-height: 100svh;
+    flex-direction: column;
+    justify-content: space-between;
+
+    overflow: hidden;
+
+    padding-top: 120px;
+    padding-bottom: 35px;
+
+    color: var(--ink);
+    background: #d6d0c3;
+}
+
+.hero-image,
+.hero-shade {
+    position: absolute;
+    inset: 0;
+}
+
+.hero-image {
+    z-index: -2;
+
+    background-image: url("../images/hero/01_hero.jpg");
+    background-position: center center;
+    background-size: cover;
+
+    animation: hero-arrive 1.8s var(--ease-organic) both;
+}
+
+.hero-shade {
+    z-index: -1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(30, 29, 24, 0.02) 0%,
+            rgba(30, 29, 24, 0.02) 42%,
+            rgba(30, 29, 24, 0.16) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(30, 29, 24, 0.24),
+            transparent 32%
+        );
+}
+
+.hero-chapter,
+.hero-copy,
+.hero-bottom,
+.hero-side-note,
+.hero-margin-note {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-chapter,
+.hero-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-chapter {
+    font-size: 9px;
+    letter-spacing: 0.19em;
+    color: rgba(36, 37, 31, 0.78);
+}
+
+.hero-copy {
+    width: min(720px, 55%);
+
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: 4%;
+
+    padding-top: 45px;
+    padding-bottom: 45px;
+
+    animation: copy-arrive 1.4s 200ms var(--ease-organic) both;
+}
+
+.hero-eyebrow {
+    max-width: 360px;
+    margin-left: 4%;
+    color: rgba(36, 37, 31, 0.78);
+}
+
+.hero h1 {
+    margin-top: 25px;
+
+    font-family: var(--font-display);
+    font-size: clamp(64px, 8.2vw, 118px);
+    font-weight: 400;
+
+    letter-spacing: -0.065em;
+    line-height: 0.88;
+}
+
+.hero h1 em {
+    display: inline-block;
+    margin-left: 11%;
+
+    color: #8e503b;
+    font-weight: 400;
+}
+
+.hero-signature {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+
+    margin-top: 42px;
+    margin-left: 25%;
+}
+
+.signature-rule {
+    width: 35px;
+    height: 1px;
+    flex-shrink: 0;
+
+    margin-top: 20px;
+
+    background: var(--accent);
+}
+
+.hero-name {
+    font-family: var(--font-display);
+    font-size: clamp(20px, 2.4vw, 29px);
+    letter-spacing: 0.01em;
+}
+
+.hero-description {
+    margin-top: 5px;
+
+    color: rgba(36, 37, 31, 0.72);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+}
+
+.hero-margin-note {
+    position: absolute;
+    right: 5%;
+    bottom: 25%;
+
+    color: rgba(36, 37, 31, 0.72);
+    font-family: var(--font-note);
+    font-size: 12px;
+    line-height: 1.7;
+
+    transform: rotate(-6deg);
+}
+
+.hero-coordinate,
+.hero-index {
+    color: rgba(36, 37, 31, 0.7);
+    font-size: 9px;
+    letter-spacing: 0.13em;
+}
+
+.scroll-cue {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    font-size: 9px;
+    letter-spacing: 0.15em;
+}
+
+.scroll-line {
+    width: 35px;
+    height: 1px;
+
+    background: var(--accent);
+    transform-origin: left;
+
+    animation: line-breathe 2.5s ease-in-out infinite;
+}
+
+.scroll-arrow {
+    color: var(--accent);
+    font-size: 17px;
+}
+
+.hero-side-note {
+    position: absolute;
+    top: 50%;
+    right: 25px;
+
+    color: rgba(36, 37, 31, 0.65);
+    font-size: 8px;
+    letter-spacing: 0.22em;
+
+    writing-mode: vertical-rl;
+}
+
+
+/* =========================================
+   4. JOURNEY
+========================================= */
+
+.journey {
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            ellipse at 15% 65%,
+            rgba(164, 95, 67, 0.08),
+            transparent 30%
+        ),
+        var(--paper);
+}
+
+.journey .section-heading {
+    padding-left: 5%;
+}
+
+.journey-art {
+    position: relative;
+
+    width: min(1050px, 100%);
+    min-height: 1280px;
+
+    margin: 0 auto;
+}
+
+.journey-spiral {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: visible;
+}
+
+.spiral-ghost,
+.spiral-ink,
+.spiral-fine {
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.spiral-ghost {
+    stroke: rgba(36, 37, 31, 0.12);
+    stroke-width: 25;
+
+    transform: translate(3px, 5px);
+}
+
+.spiral-ink {
+    stroke: #4b4a40;
+    stroke-width: 17;
+
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+
+    opacity: 0.9;
+
+    animation: reveal-spiral 3.5s ease-out forwards;
+}
+
+.spiral-fine {
+    stroke: rgba(36, 37, 31, 0.38);
+    stroke-width: 3;
+
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+
+    animation: reveal-spiral 4.5s 300ms ease-out forwards;
+}
+
+.spiral-dot {
+    fill: var(--accent);
+    stroke: var(--paper);
+    stroke-width: 7;
+}
+
+.current-dot {
+    fill: var(--olive);
+    stroke-width: 9;
+}
+
+.milestone {
+    position: absolute;
+    z-index: 2;
+
+    width: min(310px, 38%);
+    padding: 22px 25px;
+
+    background: rgba(247, 244, 237, 0.88);
+    border: 1px solid rgba(36, 37, 31, 0.09);
+
+    box-shadow: 0 15px 50px rgba(50, 43, 34, 0.045);
+
+    transition:
+        transform var(--transition-smooth),
+        box-shadow var(--transition-smooth);
+}
+
+.milestone:hover {
+    transform: translateY(-8px) rotate(-1deg);
+
+    box-shadow: 0 24px 55px rgba(50, 43, 34, 0.1);
+}
+
+.milestone-number {
+    position: absolute;
+    top: -22px;
+    right: 16px;
+
+    color: rgba(164, 95, 67, 0.35);
+    font-family: var(--font-display);
+    font-size: 46px;
+}
+
+.milestone .eyebrow {
+    color: var(--accent);
+    font-size: 9px;
+}
+
+.milestone h3 {
+    margin-top: 10px;
+
+    font-family: var(--font-display);
+    font-size: 27px;
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+.milestone p:not(.eyebrow) {
+    margin-top: 12px;
+
+    color: var(--ink-soft);
+    font-size: 12px;
+}
+
+.milestone-mark {
+    display: inline-block;
+    margin-top: 18px;
+
+    color: var(--olive);
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.milestone-one {
+    top: 12%;
+    left: 3%;
+}
+
+.milestone-two {
+    top: 27%;
+    right: 2%;
+}
+
+.milestone-three {
+    top: 55%;
+    left: 2%;
+}
+
+.milestone-four {
+    top: 73%;
+    right: 2%;
+
+    border-color: rgba(119, 119, 94, 0.4);
+}
+
+
+/* =========================================
+   5. INTERESTS
+========================================= */
+
+.interests {
+    background: var(--paper-light);
+}
+
+.interests-heading {
+    margin-bottom: 100px;
+}
+
+.interest-layout {
+    display: grid;
+
+    width: min(1120px, 100%);
+    margin: 0 auto;
+
+    grid-template-columns: repeat(12, 1fr);
+    gap: 75px 30px;
+
+    align-items: start;
+}
+
+.interest-piece {
+    min-width: 0;
+}
+
+.interest-image {
+    position: relative;
+
+    display: grid;
+    min-height: 250px;
+
+    overflow: hidden;
+    place-items: center;
+
+    background: var(--paper-dark);
+
+    transition: transform var(--transition-smooth);
+}
+
+.interest-piece:hover .interest-image {
+    transform: translateY(-7px) rotate(-1deg);
+}
+
+.image-placeholder {
+    padding: 12px;
+
+    color: rgba(36, 37, 31, 0.55);
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-align: center;
+}
+
+.interest-caption {
+    padding-top: 17px;
+}
+
+.interest-caption .eyebrow {
+    color: var(--accent);
+    font-size: 9px;
+}
+
+.interest-caption h3 {
+    margin-top: 5px;
+
+    font-family: var(--font-display);
+    font-size: 29px;
+    font-weight: 400;
+}
+
+.interest-caption p {
+    max-width: 270px;
+    margin-top: 5px;
+
+    color: var(--ink-soft);
+    font-size: 12px;
+}
+
+.interest-music {
+    grid-column: 1 / span 5;
+}
+
+.music-image {
+    min-height: 390px;
+    background: #d5c8b7;
+}
+
+.interest-movies {
+    grid-column: 8 / span 5;
+    margin-top: 90px;
+}
+
+.movies-image {
+    min-height: 300px;
+    background: #c8c4b5;
+}
+
+.interest-books {
+    grid-column: 2 / span 4;
+    margin-top: 10px;
+}
+
+.books-image {
+    min-height: 340px;
+    background: #c9b7a5;
+}
+
+.interest-food {
+    grid-column: 8 / span 4;
+    margin-top: 80px;
+}
+
+.food-image {
+    min-height: 260px;
+    background: #d6c3aa;
+}
+
+.interest-travel {
+    grid-column: 1 / span 6;
+    margin-top: 25px;
+}
+
+.travel-image {
+    min-height: 360px;
+    background: #b9b8a6;
+}
+
+.interest-more {
+    position: relative;
+
+    grid-column: 9 / span 4;
+    margin-top: 100px;
+    padding: 30px 0;
+}
+
+.interest-more .eyebrow {
+    color: var(--accent);
+}
+
+.interest-more h3 {
+    margin-top: 20px;
+
+    font-family: var(--font-display);
+    font-size: clamp(30px, 4vw, 48px);
+    font-weight: 400;
+    line-height: 1.05;
+}
+
+.interest-more h3 em {
+    color: var(--accent);
+}
+
+.interest-more p:not(.eyebrow) {
+    margin-top: 20px;
+
+    color: var(--ink-soft);
+    font-size: 12px;
+}
+
+.interest-doodle {
+    display: block;
+    margin-top: 20px;
+
+    color: var(--accent);
+    font-size: 38px;
+
+    animation: slow-turn 18s linear infinite;
+}
+
+
+/* =========================================
+   6. FAMILY
+========================================= */
+
+.family {
+    background:
+        radial-gradient(
+            ellipse at 80% 40%,
+            rgba(164, 95, 67, 0.07),
+            transparent 35%
+        ),
+        var(--paper);
+}
+
+.family .section-heading {
+    text-align: center;
+}
+
+.family .section-intro {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.family-artwork {
+    position: relative;
+
+    width: min(1000px, 100%);
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    background: var(--paper-dark);
+
+    box-shadow: 0 25px 70px rgba(50, 43, 34, 0.1);
+}
+
+.family-artwork > img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.family-annotation {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+}
+
+.family-arrow,
+.family-arrow-head {
+    fill: none;
+
+    stroke: var(--accent);
+    stroke-width: 3.2;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    stroke-dasharray: 700;
+    stroke-dashoffset: 700;
+
+    animation: draw-ink 2.5s 800ms var(--ease-organic) forwards;
+}
+
+.family-label {
+    position: absolute;
+    top: 10%;
+    left: 58%;
+
+    color: var(--accent);
+    font-family: var(--font-note);
+    font-size: clamp(18px, 2.5vw, 27px);
+
+    transform: rotate(-7deg);
+}
+
+.family-caption {
+    position: absolute;
+    right: 18px;
+    bottom: 16px;
+
+    padding: 8px 12px;
+
+    background: rgba(247, 244, 237, 0.8);
+
+    color: var(--ink-soft);
+    font-size: 8px;
+    letter-spacing: 0.14em;
+}
+
+
+/* =========================================
+   7. HOBBIES
+========================================= */
+
+.hobbies {
+    background: var(--paper-light);
+}
+
+.hobby-gallery {
+    display: grid;
+
+    width: min(1120px, 100%);
+    margin: 0 auto;
+
+    grid-template-columns: 1.2fr 0.8fr 1fr;
+    grid-template-rows: 260px 230px;
+
+    gap: 22px;
+    align-items: stretch;
+}
+
+.hobby-photo {
+    min-width: 0;
+}
+
+.hobby-placeholder {
+    display: grid;
+
+    width: 100%;
+    height: calc(100% - 30px);
+    min-height: 150px;
+
+    place-items: center;
+
+    background: var(--paper-dark);
+
+    color: rgba(36, 37, 31, 0.55);
+    font-size: 9px;
+    letter-spacing: 0.14em;
+
+    transition: transform var(--transition-smooth);
+}
+
+.hobby-photo:hover .hobby-placeholder {
+    transform: scale(0.98);
+}
+
+.hobby-photo figcaption {
+    padding-top: 8px;
+
+    color: var(--ink-soft);
+    font-size: 10px;
+}
+
+.hobby-large {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+}
+
+.hobby-tall {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+}
+
+.hobby-small {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.hobby-wide {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+
+/* =========================================
+   8. FOOTER
+========================================= */
+
+.footer {
+    display: flex;
+    min-height: 75vh;
+
+    flex-direction: column;
+    justify-content: space-between;
+
+    overflow: hidden;
+
+    color: var(--paper-light);
+
+    background:
+        linear-gradient(
+            rgba(27, 29, 25, 0.78),
+            rgba(27, 29, 25, 0.88)
+        ),
+        url("../images/footer/06_footer.jpg") center / cover;
+}
+
+.footer-top {
+    width: min(900px, 100%);
+    margin: auto;
+    text-align: center;
+}
+
+.footer-top .eyebrow {
+    color: var(--accent-light);
+}
+
+.footer h2 {
+    margin-top: 25px;
+
+    font-family: var(--font-display);
+    font-size: clamp(55px, 9vw, 110px);
+    font-weight: 400;
+
+    letter-spacing: -0.06em;
+    line-height: 0.95;
+}
+
+.footer h2 em {
+    color: #d2a187;
+}
+
+.footer-top > p:last-child {
+    margin-top: 25px;
+
+    color: rgba(247, 244, 237, 0.7);
+    font-size: 13px;
+}
+
+.footer-bottom {
+    display: flex;
+
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding-top: 35px;
+    border-top: 1px solid rgba(247, 244, 237, 0.2);
+}
+
+.footer-brand {
+    font-family: var(--font-display);
+    font-size: 26px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.footer-links a,
+.footer-bottom p,
+.back-to-top {
+    color: rgba(247, 244, 237, 0.72);
+    font-size: 10px;
+}
+
+.footer-links a:hover,
+.back-to-top:hover {
+    color: var(--accent-light);
+}
+
+
+/* =========================================
+   9. SCROLL REVEALS
+========================================= */
+
+
+/* SCROLL REVEALS — graceful fallback */
+
+.reveal {
+    opacity: 1;
+    transform: none;
+
+    transition:
+        opacity 900ms var(--ease-organic),
+        transform 900ms var(--ease-organic);
+}
+
+/* Hide elements only when JavaScript is actually active. */
+body.has-js .reveal:not(.is-visible) {
+    opacity: 0;
+    transform: translateY(28px);
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+/* =========================================
+   10. ANIMATIONS
+========================================= */
+
+@keyframes hero-arrive {
+
+    from {
+        opacity: 0.5;
+        transform: scale(1.045);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+@keyframes copy-arrive {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes line-breathe {
+
+    0%, 100% {
+        transform: scaleX(0.65);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+
+}
+
+@keyframes reveal-spiral {
+
+    to {
+        stroke-dashoffset: 0;
+    }
+
+}
+
+@keyframes draw-ink {
+
+    to {
+        stroke-dashoffset: 0;
+    }
+
+}
+
+@keyframes slow-turn {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================
+   11. TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 760px) {
+
+    .site-header {
+        padding-top: 18px;
+        padding-bottom: 18px;
+    }
+
+    .main-nav {
+        gap: 13px;
+    }
+
+    .main-nav a {
+        font-size: 9px;
+    }
+
+    .nav-note {
+        display: none;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        min-height: 90svh;
+    }
+
+    .hero-copy {
+        width: 72%;
+        margin-right: 2%;
+    }
+
+    .hero h1 {
+        font-size: clamp(48px, 9vw, 76px);
+    }
+
+    .hero h1 em {
+        margin-left: 5%;
+    }
+
+    .hero-signature {
+        margin-left: 10%;
+    }
+
+    .hero-margin-note {
+        right: 4%;
+        bottom: 16%;
+        font-size: 10px;
+    }
+
+    .hero-side-note {
+        right: 10px;
+    }
+
+
+    /* Journey */
+
+    .journey-art {
+        min-height: auto;
+        padding: 20px 0 30px 35px;
+    }
+
+    .journey-spiral {
+        top: 0;
+        left: -15%;
+
+        width: 100%;
+        height: 100%;
+
+        opacity: 0.45;
+    }
+
+    .milestone {
+        position: relative;
+
+        top: auto;
+        right: auto;
+        left: auto;
+
+        width: min(330px, 90%);
+        margin: 0 0 70px auto;
+    }
+
+    .milestone:nth-of-type(even) {
+        margin-right: auto;
+        margin-left: 0;
+    }
+
+
+    /* Interests */
+
+    .interest-layout {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 45px 18px;
+    }
+
+    .interest-piece {
+        grid-column: auto;
+        margin-top: 0;
+    }
+
+    .interest-image {
+        min-height: 210px;
+    }
+
+    .interest-more {
+        padding: 10px 0;
+    }
+
+
+    /* Family */
+
+    .family-artwork {
+        width: 100%;
+    }
+
+
+    /* Hobbies */
+
+    .hobby-gallery {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 220px 200px 200px;
+    }
+
+    .hobby-large {
+        grid-column: 1 / span 2;
+        grid-row: 1;
+    }
+
+    .hobby-tall {
+        grid-column: 2;
+        grid-row: 2 / span 2;
+    }
+
+    .hobby-small {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .hobby-wide {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+
+    /* Footer */
+
+    .footer-bottom {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================
+   12. MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 430px) {
+
+    .main-nav {
+        gap: 9px;
+    }
+
+    .main-nav a {
+        font-size: 8px;
+    }
+
+
+    /* Hero */
+
+    .hero-chapter {
+        font-size: 7px;
+    }
+
+    .hero-copy {
+        width: 88%;
+        margin-right: 0;
+    }
+
+    .hero h1 {
+        font-size: clamp(43px, 11vw, 58px);
+    }
+
+    .hero h1 em {
+        margin-left: 3%;
+    }
+
+    .hero-margin-note {
+        right: 5%;
+        bottom: 14%;
+        font-size: 9px;
+    }
+
+    .hero-coordinate,
+    .hero-index {
+        font-size: 7px;
+    }
+
+    .scroll-cue {
+        gap: 7px;
+        font-size: 7px;
+    }
+
+
+    /* Interests */
+
+    .interest-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .interest-piece {
+        width: 85%;
+    }
+
+    .interest-movies,
+    .interest-food {
+        margin-left: auto;
+    }
+
+    .interest-image {
+        min-height: 260px;
+    }
+
+    .interest-more {
+        width: 100%;
+    }
+
+
+    /* Family */
+
+    .family-label {
+    position: absolute;
+    top: 9%;
+    left: 57%;
+
+    color: var(--accent);
+    font-family: var(--font-note);
+    font-size: clamp(18px, 2.5vw, 27px);
+
+    transform: rotate(-7deg);
+}
+
+    .family-caption {
+        right: 6px;
+        bottom: 6px;
+        font-size: 6px;
+    }
+
+
+    /* Hobbies */
+
+    .hobby-gallery {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hobby-placeholder {
+        height: 230px;
+    }
+
+}
+
+
+/* =========================================
+   13. ACCESSIBILITY: REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
+
+
+/* Family illustration: use the generated artwork at its natural proportions. */
+.family-artwork {
+    position: relative;
+    display: block;
+    width: min(1120px, 100%);
+    height: auto;
+    margin: 0 auto;
+    overflow: visible;
+    aspect-ratio: auto;
+    background: transparent;
+    box-shadow: none;
+}
+
+.family-artwork > img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: auto;
+    object-fit: contain;
+    object-position: center;
+    box-shadow: 0 25px 70px rgba(50, 43, 34, 0.1);
+}

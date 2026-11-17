@@ -1,0 +1,72 @@
+
+:root {
+
+    /* ---------------------------------
+       COLOUR PALETTE
+    --------------------------------- */
+
+    --ink: #24251f;
+    --ink-soft: #55564d;
+
+    --paper: #eee9df;
+    --paper-light: #f7f4ed;
+    --paper-dark: #ded6c8;
+
+    --accent: #a45f43;
+    --accent-light: #c58c6e;
+
+    --olive: #77775e;
+
+
+    /* ---------------------------------
+       TYPOGRAPHY
+    --------------------------------- */
+
+    --font-display:
+        "Iowan Old Style",
+        "Palatino Linotype",
+        "Book Antiqua",
+        Georgia,
+        serif;
+
+    --font-body:
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    --font-note:
+        "Segoe Print",
+        "Bradley Hand",
+        cursive;
+
+
+    /* ---------------------------------
+       LAYOUT
+    --------------------------------- */
+
+    --page-width: 1320px;
+
+    --page-gutter: clamp(22px, 6vw, 100px);
+
+
+    /* ---------------------------------
+       SPACING
+    --------------------------------- */
+
+    --space-small: 12px;
+    --space-medium: 24px;
+    --space-large: 48px;
+
+    --space-section: clamp(100px, 14vw, 190px);
+
+
+    /* ---------------------------------
+       MOTION
+    --------------------------------- */
+
+    --ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
+
+    --transition-smooth: 500ms var(--ease-organic);
+
+}
