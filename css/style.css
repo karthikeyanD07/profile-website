@@ -416,7 +416,8 @@ img {
 .milestone {
     position: absolute;
     z-index: 2;
-    width: min(330px, 29%);
+    width: 29%;
+    max-width: 330px;
     padding: 20px 20px 21px;
     background: rgba(248, 244, 236, .96);
     border: 1px solid rgba(99, 101, 87, .18);
