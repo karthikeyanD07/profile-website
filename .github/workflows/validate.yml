@@ -25,10 +25,10 @@ jobs:
       - name: Install validation tools
         run: |
           npm install -g htmlhint
-          npm install -g stylelint stylelint-config-standard
+          npm install -g stylelint stylelint-config-recommended
 
       - name: Validate HTML
         run: htmlhint "*.html" --config .htmlhintrc
 
       - name: Validate CSS
-        run: stylelint "css/*.css" --config-basedir /usr/local/lib/node_modules --config '{"extends":"stylelint-config-standard","rules":{"custom-property-pattern":null,"selector-class-pattern":null,"declaration-block-no-redundant-longhand-properties":null,"alpha-value-notation":null,"color-function-notation":null,"declaration-property-value-no-unknown":null,"no-descending-specificity":null}}'
+        run: stylelint "css/*.css" --config .stylelintrc.json
