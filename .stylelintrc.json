@@ -4,6 +4,7 @@
     "custom-property-pattern": null,
     "selector-class-pattern": null,
     "no-descending-specificity": null,
+    "no-duplicate-selectors": null,
     "declaration-block-no-redundant-longhand-properties": null
   }
 }
