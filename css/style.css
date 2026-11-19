@@ -1,4 +1,4 @@
-﻿/* =========================================================
+/* =========================================================
    01. GLOBAL FOUNDATION
 ========================================================= */
 *,
@@ -338,7 +338,7 @@ img {
 }
 
 /* =========================================================
-   04. PROFESSIONAL JOURNEY â€” JAPANESE INK SPIRAL
+   04. PROFESSIONAL JOURNEY — JAPANESE INK SPIRAL
 ========================================================= */
 .journey {
     overflow: hidden;
@@ -598,7 +598,7 @@ img {
 }
 
 /* =========================================================
-   06. INTERESTS â€” LOOSE, PAPER-MOUNTED EDITORIAL COLLAGE
+   06. INTERESTS — LOOSE, PAPER-MOUNTED EDITORIAL COLLAGE
 ========================================================= */
 .interests {
     overflow: hidden;
@@ -808,7 +808,7 @@ img {
 }
 
 /* =========================================================
-   08. HOBBIES â€” SMALL PHOTO PRINTS ON CRUSHED PAPER
+   08. HOBBIES — SMALL PHOTO PRINTS ON CRUSHED PAPER
 ========================================================= */
 .hobbies {
     overflow: hidden;
@@ -907,7 +907,7 @@ img {
 }
 
 /* =========================================================
-   09. FOOTER â€” QUIET PARCHMENT EPILOGUE
+   09. FOOTER — QUIET PARCHMENT EPILOGUE
 ========================================================= */
 .footer {
     position: relative;
@@ -1508,7 +1508,7 @@ img {
 }
 
 /* =========================================================
-   15. DARK JOURNAL â€” MYSTICAL GOLD EDITION
+   15. DARK JOURNAL — MYSTICAL GOLD EDITION
    Activate by setting data-theme="dark" on the <html> element.
    The original hero composition and photographs are preserved.
 ========================================================= */
@@ -1586,7 +1586,7 @@ html[data-theme="dark"] .nav-note span {
     color: #d8b66b;
 }
 
-/* HERO â€” original layout and assets remain intact.
+/* HERO — original layout and assets remain intact.
    The treatment changes only the atmosphere in dark mode. */
 html[data-theme="dark"] .hero {
     background: #191812;
@@ -1729,7 +1729,7 @@ html[data-theme="dark"] .project-entry:hover {
     background: rgba(184, 148, 75, .055);
 }
 
-/* Interests and hobbies â€” dark paper mounts, natural photographs */
+/* Interests and hobbies — dark paper mounts, natural photographs */
 html[data-theme="dark"] .interests,
 html[data-theme="dark"] .hobbies {
     background-color: #1d1b16;
@@ -1794,7 +1794,7 @@ html[data-theme="dark"] .family-illustration figcaption {
     color: #c6b58f;
 }
 
-/* Footer â€” cinematic gold epilogue */
+/* Footer — cinematic gold epilogue */
 html[data-theme="dark"] .footer {
     background: #171611;
 }
@@ -1991,10 +1991,10 @@ html[data-theme="dark"] .theme-label {
 
 
 /* =========================================================
-   SELECTED WORK â€” LIGHT / DARK THEME CORRECTION
+   SELECTED WORK — LIGHT / DARK THEME CORRECTION
 ========================================================= */
 
-/* LIGHT MODE â€” preserve the original paper appearance */
+/* LIGHT MODE — preserve the original paper appearance */
 html:not([data-theme="dark"]) .work {
     background: var(--paper-light);
 }
@@ -2026,7 +2026,7 @@ html:not([data-theme="dark"]) .project-details span {
     color: #5d6256;
 }
 
-/* DARK MODE â€” charcoal surfaces and antique gold */
+/* DARK MODE — charcoal surfaces and antique gold */
 html[data-theme="dark"] .work {
     background: #171713;
 }
